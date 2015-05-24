@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"> </script>
+<script type="text/javascript">
+function ajaxget() {
+var text =  $("#qrtext").val();
+$("#imgalign").html('<img src="' +  "http://localhost:8080/qr?text=" + text + '" />');
+}
+
+$('#qrtext').change(function () {
+
+    alert($('#qrtext').val());
+ajaxget();
+});
+
+</script>
+<body>
+<h1>QR Generator</h1>
+<form>
+Enter QR Text:
+<input type="text" id="qrtext" name="qr" onkeyup="ajaxget()">
+<br>
+<br>
+</form>
+
+<br>
+Generated QR below : <br>
+<div id="imgalign">
+
+</div>
+
+</body>
+</html>
